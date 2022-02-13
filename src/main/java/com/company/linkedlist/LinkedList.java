@@ -53,6 +53,33 @@ public class LinkedList {
         last = last.previous;
     }
 
+    public boolean insertAfter(String key, String data){
+        Node node = first;
+        while(first.getData() != key){   //looping through all nodes using .next reference
+            node = node.getNext();
+            if(node == null){
+                return false;
+            }
+        }
+
+        Node toBeCreated = new Node();   //if there is a node with the same data as the key, we continue
+        toBeCreated.setData(data);
+
+        if(node == last){               //if the node after which toBeCreated node is going to be inserted is the last node,
+            node.setNext(null);         //we have to make sure that the last node points to null
+            last = new Node();
+        } else {
+            toBeCreated.setNext(node.getNext());  //the next node after alois is pepa, the node inserted after alois should point to pepa
+            node.getNext().setPrevious(toBeCreated); //the next node after alois is pepa, pepa.previous points to alois, we want pepa to point to our new node
+        }
+
+        toBeCreated.setPrevious(node);
+        node.setNext(toBeCreated);
+
+        return true;
+
+    }
+
     public void displayData(){
         Node node = first;
         while(node != null){
