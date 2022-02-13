@@ -8,14 +8,10 @@ public class App {
         list.insertFirst("pepa");
         list.insertFirst("alois");
         list.insertFirst("baloun");
+
         list.displayData();
 
-        System.out.println("první: " + list.getFirst().data);
-        System.out.println("před prvním: " + list.getFirst().previous);
-        System.out.println("za prvním: " + list.getFirst().next.data);
-
-
-
+        list.firstAndLastInfo();
     }
 
 }

@@ -34,15 +34,23 @@ public class LinkedList {
 
     }
 
-    public Node deleteFirst(){
-        Node temp = first;
+    public void deleteFirst(){
         if(first.next == null){
             last = null;
         } else {
             first.next.previous = null;
         }
         first = first.next;
-        return temp;
+    }
+
+    public void deleteLast(){
+        if(first.next == null){
+            first = null;
+        }
+        else {
+            last.previous.next = null;
+        }
+        last = last.previous;
     }
 
     public void displayData(){
@@ -51,7 +59,19 @@ public class LinkedList {
             node.displayNode();
             node = node.next;
         }
-        System.out.println();
+        System.out.println("----------");
+    }
+
+    public void firstAndLastInfo(){
+        System.out.println("-----------");
+        System.out.println("první: " + getFirst().getData());
+        System.out.println("před prvním: (previous) " + getFirst().getPrevious());
+        System.out.println("za prvním: (next) " + getFirst().getNext().getData());
+        System.out.println("-----------");
+        System.out.println("poslední: " + getLast().getData());
+        System.out.println("před posledním: (previous) " + getLast().getPrevious().getData());
+        System.out.println("za posledním: (next) " + getLast().getNext());
+        System.out.println("-----------");
     }
 
 
