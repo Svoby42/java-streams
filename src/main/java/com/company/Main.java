@@ -23,13 +23,13 @@ public class Main {
 
         List<Employee> zamestnanci = Employee.getEmployees();
 
-        System.out.println("\nseradit podle delky jmena");
+        System.out.println("seradit podle delky jmena\n");
         sortByNameLength(zamestnanci).forEach(System.out::println);
 
-        System.out.println("\nabecedne seradit podle nazvu prace");
+        System.out.println("abecedne seradit podle nazvu prace\n");
         sortByJobTitle(zamestnanci).forEach(System.out::println);
 
-        System.out.println("\nabecedne seradit podle podle jmena");
+        System.out.println("abecedne seradit podle podle jmena\n");
         sortByName(zamestnanci).forEach(System.out::println);
 
     }
