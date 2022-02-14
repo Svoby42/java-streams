@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class LinkedList {
+public class LinkedList <T> {
 
     private Node first;
     private Node last;
@@ -19,8 +19,8 @@ public class LinkedList {
         return first == null;
     }
 
-    public void insertFirst(String data) {
-        Node node = new Node();
+    public void insertFirst(T data) {
+        Node<T> node = new Node();
         node.data = data;
 
         if(isEmpty()){
@@ -42,6 +42,7 @@ public class LinkedList {
         }
         first = first.next;
     }
+
 
     public void deleteLast(){
         if(first.next == null){
